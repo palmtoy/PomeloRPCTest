@@ -1,12 +1,10 @@
 {
   "development":{
     "connector": [
-    {"id": "connector-server-1", "host": "127.0.0.1", "port": 3150, "clientPort": 3010, "frontend": true}
-    ]
-  },
-  "production":{
-    "connector": [
-    {"id": "connector-server-1", "host": "127.0.0.1", "port": 3150, "clientPort": 3010, "frontend": true}
+      {"id": "connector-server-1", "host": "127.0.0.1", "port": 8150, "clientPort": 8010, "frontend": true}
+    ],
+    "echo": [
+      {"id":"echo-server-1", "host":"127.0.0.1", "port":8250}
     ]
   }
 }
