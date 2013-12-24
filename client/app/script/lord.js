@@ -381,9 +381,6 @@ var startSend = function(pomelo){
   var beginTime = Date.now();
   var idx = setInterval(function() {
     monitor('incr', 'sendReq');
-    if(++n >= sum) {
-      clearInterval(idx);
-    }
     monitor(START, 'sendMsg', 1);
     pomelo.request(route, msg, function(data) {
       monitor(END, 'sendMsg', 1);
@@ -392,6 +389,7 @@ var startSend = function(pomelo){
       var ts = '[' + d.toLocaleTimeString() + '.' + d.getMilliseconds() + '] ';
       console.log('%s%d : code = %d', ts, retNum, data.c);
       if(retNum >= sum) {
+        clearInterval(idx);
         var endTime = Date.now();
         console.log('========================');
         console.log('cost time : %d', endTime - beginTime);
