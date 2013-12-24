@@ -379,9 +379,9 @@ var startSend = function(pomelo){
   var msg = {m: 'Hello World'};
   var idx = setInterval(function() {
     monitor('incr', 'sendReq');
-    monitor(START, 'send', 1);
+    monitor(START, 'sendMsg', 1);
     pomelo.request(route, msg, function(data) {
-      monitor(END, 'send', 1);
+      monitor(END, 'sendMsg', 1);
       ++n;
       console.log('%d : code = ', n, data.c);
       if(n >= sum) {
