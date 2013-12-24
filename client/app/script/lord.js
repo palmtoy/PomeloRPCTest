@@ -383,7 +383,9 @@ var startSend = function(pomelo){
     pomelo.request(route, msg, function(data) {
       monitor(END, 'sendMsg', 1);
       ++n;
-      console.log('%s ~ %d : code = ', Date(), n, data.c);
+      var d = new Date();
+      var ts = '[' + d.toLocaleTimeString() + '.' + d.getMilliseconds() + '] ';
+      console.log('%s%d : code = %d', ts, n, data.c);
       if(n >= sum) {
         clearInterval(idx);
         // process.exit(0);
