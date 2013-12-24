@@ -372,7 +372,7 @@ var monitor = function(type, name, reqId) {
 
 var sum = 10000
   , n = 0
-  , sendInterval = 2;
+  , sendInterval = 1;
 
 var startSend = function(pomelo){
   var route = 'connector.echoHandler.echo';
