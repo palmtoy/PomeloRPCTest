@@ -377,6 +377,7 @@ var sum = 10000
 var startSend = function(pomelo){
   var route = 'connector.echoHandler.echo';
   var msg = {m: 'Hello World'};
+  var beginTime = Date.now();
   var idx = setInterval(function() {
     monitor('incr', 'sendReq');
     monitor(START, 'sendMsg', 1);
@@ -388,6 +389,10 @@ var startSend = function(pomelo){
       console.log('%s%d : code = %d', ts, n, data.c);
       if(n >= sum) {
         clearInterval(idx);
+        var endTime = Date.now();
+        console.log('========================');
+        console.log('cost time : %d', endTime - beginTime);
+        console.log('========================');
         // process.exit(0);
       }
     });
