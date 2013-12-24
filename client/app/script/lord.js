@@ -370,17 +370,25 @@ var monitor = function(type, name, reqId) {
   });
 })();
 
+var sum = 10000
+  , n = 0
+  , sendInterval = 1;
+
 var startSend = function(pomelo){
-  var interval = 1000;
   var route = 'connector.echoHandler.echo';
   var msg = {m: 'Hello World'};
-  setInterval(function() {
+  var idx = setInterval(function() {
     monitor('incr', 'sendReq');
     monitor(START, 'send', 1);
     pomelo.request(route, msg, function(data) {
       monitor(END, 'send', 1);
-      console.log('code = ', data.c);
+      ++n;
+      console.log('%d : code = ', n, data.c);
+      if(n >= sum) {
+        clearInterval(idx);
+        process.exit(0);
+      }
     });
-  }, interval);
+  }, sendInterval);
 };
 
