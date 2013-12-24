@@ -390,7 +390,7 @@ var startSend = function(pomelo){
       ++retNum;
       var d = new Date();
       var ts = '[' + d.toLocaleTimeString() + '.' + d.getMilliseconds() + '] ';
-      console.log('%s%d : code = %d', ts, n, data.c);
+      console.log('%s%d : code = %d', ts, retNum, data.c);
       if(retNum >= sum) {
         var endTime = Date.now();
         console.log('========================');
