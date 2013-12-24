@@ -386,7 +386,7 @@ var startSend = function(pomelo){
       console.log('%d : code = ', n, data.c);
       if(n >= sum) {
         clearInterval(idx);
-        process.exit(0);
+        // process.exit(0);
       }
     });
   }, sendInterval);
