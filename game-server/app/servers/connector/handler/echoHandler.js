@@ -20,11 +20,11 @@ Handler.prototype.echo = function(msg, session, next) {
   }
   this.app.rpc.echo.echoRemote.echo(session, msg,
     function(err, ret) {
-      next(null, {c: ret});
       ++curNum;
       if(curNum >= maxNum) {
         console.error('%d : costTime = %d(s)', curNum, (Date.now() - beginTime)/1000.0);
       }
+      next(null, {c: ret});
     });
  };
 
