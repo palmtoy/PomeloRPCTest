@@ -1,7 +1,5 @@
 var utils = require('../../../util/utils');
 
-var isFirstCall = true;
-var beginTime = null;
 var maxNum = 20000;
 var curNum = 0;
 
@@ -14,15 +12,12 @@ var Handler = function(app) {
 };
 
 Handler.prototype.echo = function(msg, session, next) {
-  if(isFirstCall) {
-    beginTime = Date.now();
-    isFirstCall = false;
-  }
+  var beginTime = Date.now();
   this.app.rpc.echo.echoRemote.echo(session, msg,
     function(err, ret) {
       ++curNum;
       if(curNum >= maxNum) {
-        console.error('%d : costTime = %d(s)', curNum, (Date.now() - beginTime)/1000.0);
+        console.error('%d ~ A RPC costTime = %d(ms)', curNum, (Date.now() - beginTime));
       }
       next(null, {c: ret});
     });
