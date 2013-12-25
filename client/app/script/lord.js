@@ -380,10 +380,10 @@ var startSend = function(pomelo){
   var msg = {m: 'Hello World'};
   var beginTime = Date.now();
   var idx = setInterval(function() {
-    monitor('incr', 'sendReq');
-    monitor(START, 'sendMsg', 1);
+    // monitor('incr', 'sendReq');
+    // monitor(START, 'sendMsg', 1);
     pomelo.request(route, msg, function(data) {
-      monitor(END, 'sendMsg', 1);
+      // monitor(END, 'sendMsg', 1);
       ++retNum;
       var d = new Date();
       var ts = '[' + d.toLocaleTimeString() + '.' + d.getMilliseconds() + '] ';
