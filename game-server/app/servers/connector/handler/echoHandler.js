@@ -21,7 +21,7 @@ Handler.prototype.echo = function(msg, session, next) {
   this.app.rpc.echo.echoRemote.echo(session, msg,
     function(err, ret) {
       ++curNum;
-      if(curNum >= maxNum) {
+      if(curNum > maxNum && rpcLogDict[idx]) {
         console.error('%d ~ A RPC costTime = %d(ms)', curNum, (Date.now() - rpcLogDict[idx]));
       }
       next(null, {c: ret});
