@@ -1,6 +1,6 @@
 var utils = require('../../../util/utils');
 
-var maxNum = 20000;
+var maxNum = 19900;
 var curNum = 0;
 
 module.exports = function(app) {
