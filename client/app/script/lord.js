@@ -377,6 +377,7 @@ var ACTOR_ID_PORT_MAP = {
   if (typeof actor !== 'undefined'){
     tmpPort = ACTOR_ID_PORT_MAP[actor.id];
   }
+  console.log('actor.id, tmpPort = ', actor.id, tmpPort);
   if(tmpPort > 0) {
     // init socketClient
     pomelo.init({host: config.apps.host, port: tmpPort, log: true}, function() {
@@ -385,7 +386,7 @@ var ACTOR_ID_PORT_MAP = {
   }
 })();
 
-var sum = 10000
+var sum = 3
   , n = 0
   , retNum = 0
   , sendInterval = 1;
