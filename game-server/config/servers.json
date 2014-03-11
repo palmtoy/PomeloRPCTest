@@ -1,7 +1,12 @@
 {
   "development":{
     "connector": [
-      {"id": "connector-server-1", "host": "127.0.0.1", "port": 8150, "clientPort": 8010, "frontend": true}
+      {"id": "connector-server-0", "host": "127.0.0.1", "port": 8150, "clientPort": 8010, "frontend": true},
+      {"id": "connector-server-1", "host": "127.0.0.1", "port": 8151, "clientPort": 8011, "frontend": true},
+      {"id": "connector-server-2", "host": "127.0.0.1", "port": 8152, "clientPort": 8012, "frontend": true},
+      {"id": "connector-server-3", "host": "127.0.0.1", "port": 8153, "clientPort": 8013, "frontend": true},
+      {"id": "connector-server-4", "host": "127.0.0.1", "port": 8154, "clientPort": 8014, "frontend": true},
+      {"id": "connector-server-5", "host": "127.0.0.1", "port": 8155, "clientPort": 8015, "frontend": true}
     ],
     "echo": [
       {"id":"echo-server-1", "host":"127.0.0.1", "port":8250}

@@ -360,14 +360,29 @@ var monitor = function(type, name, reqId) {
   }
 };
 
+var ACTOR_ID_PORT_MAP = {
+  0: 8010,
+  1: 8011,
+  2: 8012,
+  3: 8013,
+  4: 8014,
+  5: 8015
+};
+
 (function entry() {
   if (!!socket) {
     return;
   }
-  // init socketClient
-  pomelo.init({host: config.apps.host, port: config.apps.port, log: true}, function() {
-    startSend(pomelo);
-  });
+  var tmpPort = config.apps.port;
+  if (typeof actor !== 'undefined'){
+    tmpPort = ACTOR_ID_PORT_MAP[actor.id];
+  }
+  if(tmpPort > 0) {
+    // init socketClient
+    pomelo.init({host: config.apps.host, port: tmpPort, log: true}, function() {
+      startSend(pomelo);
+    });
+  }
 })();
 
 var sum = 10000

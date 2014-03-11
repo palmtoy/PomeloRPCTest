@@ -1,5 +1,5 @@
 {
   "master": {"host": "pomelo17.server.163.org", "port":8888, "webport":8889, "cwebport":8890, "interval": 2000},
   "apps": {"host": "10.120.144.102", "port": 8010},
-  "clients": ["10.120.146.165", "10.120.146.167", "10.120.146.168"]
+  "clients": ["10.120.146.165"]
 }
