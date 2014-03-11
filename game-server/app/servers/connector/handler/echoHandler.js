@@ -14,6 +14,7 @@ var Handler = function(app) {
 };
 
 Handler.prototype.echo = function(msg, session, next) {
+  var self = this;
   var idx = uuid.v1();
   if(curNum >= maxNum) {
     rpcLogDict[idx] = Date.now();
@@ -22,7 +23,7 @@ Handler.prototype.echo = function(msg, session, next) {
     function(err, ret) {
       ++curNum;
       if(curNum > maxNum && rpcLogDict[idx]) {
-        console.error('%s : %d ~ A RPC costTime = %d(ms)', this.app.getServerId(), curNum, (Date.now() - rpcLogDict[idx]));
+        console.error('%s : %d ~ A RPC costTime = %d(ms)', self.app.getServerId(), curNum, (Date.now() - rpcLogDict[idx]));
       }
       next(null, {c: ret});
     });
