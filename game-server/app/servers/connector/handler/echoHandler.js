@@ -22,7 +22,7 @@ Handler.prototype.echo = function(msg, session, next) {
     function(err, ret) {
       ++curNum;
       if(curNum > maxNum && rpcLogDict[idx]) {
-        console.error('%d ~ A RPC costTime = %d(ms)', curNum, (Date.now() - rpcLogDict[idx]));
+        console.error('%s : %d ~ A RPC costTime = %d(ms)', this.app.getServerId(), curNum, (Date.now() - rpcLogDict[idx]));
       }
       next(null, {c: ret});
     });
