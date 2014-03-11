@@ -1,7 +1,7 @@
 var utils = require('../../../util/utils');
 var uuid = require('node-uuid');
 
-var maxNum = 19900;
+var maxNum = 9950;
 var curNum = 0;
 var rpcLogDict = {};
 
