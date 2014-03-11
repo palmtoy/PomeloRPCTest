@@ -386,7 +386,7 @@ var ACTOR_ID_PORT_MAP = {
   }
 })();
 
-var sum = 3
+var sum = 10000
   , n = 0
   , retNum = 0
   , sendInterval = 1;
