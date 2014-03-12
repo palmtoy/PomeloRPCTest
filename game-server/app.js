@@ -16,14 +16,14 @@ app.configure('production|development', 'connector', function(){
       useDict : true,
       useProtobuf : true
     });
+});
 
-  app.set('proxyConfig', {
-    rpcClient: zmq.client
-  });
+app.set('proxyConfig', {
+  rpcClient: zmq.client
+});
 
-  app.set('remoteConfig', {
-    rpcServer: zmq.server
-  });
+app.set('remoteConfig', {
+  rpcServer: zmq.server
 });
 
 // start app
