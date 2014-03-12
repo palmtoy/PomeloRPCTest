@@ -1,4 +1,5 @@
 var pomelo = require('pomelo');
+var zmq = require('pomelo-rpc-zeromq');
 
 /**
  * Init app for client.
@@ -15,6 +16,14 @@ app.configure('production|development', 'connector', function(){
       useDict : true,
       useProtobuf : true
     });
+
+  app.set('proxyConfig', {
+    rpcClient: zmq.client
+  });
+
+  app.set('remoteConfig', {
+    rpcServer: zmq.server
+  });
 });
 
 // start app
@@ -23,3 +32,4 @@ app.start();
 process.on('uncaughtException', function (err) {
   console.error(' Caught exception: ' + err.stack);
 });
+

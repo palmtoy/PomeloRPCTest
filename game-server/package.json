@@ -7,8 +7,9 @@
       "url": "https://github.com/palmtoy/PomeloRPCTest.git"
     },
     "dependencies": {
-        "pomelo": "0.7.7"
+        "pomelo": "0.9.3"
         , "node-uuid": "1.4.0"
+        , "pomelo-rpc-zeromq": "0.0.8"
     }
 }
 
