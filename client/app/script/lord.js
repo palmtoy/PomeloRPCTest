@@ -375,7 +375,7 @@ var ACTOR_ID_PORT_MAP = {
   }
   var tmpPort = config.apps.port;
   if (typeof actor !== 'undefined'){
-    tmpPort = ACTOR_ID_PORT_MAP[actor.id];
+    // tmpPort = ACTOR_ID_PORT_MAP[actor.id];
   }
   console.log('actor.id, tmpPort = ', actor.id, tmpPort);
   if(tmpPort > 0) {
