@@ -394,6 +394,12 @@ var sum = 10000
 var startSend = function(pomelo){
   var route = 'connector.echoHandler.echo';
   var msg = {m: 'Hello World'};
+
+  pomelo.request(route, msg, function(data) {
+    console.log('data = ', data);
+  });
+
+/*
   var beginTime = Date.now();
   var idx = setInterval(function() {
     // monitor('incr', 'sendReq');
@@ -414,5 +420,6 @@ var startSend = function(pomelo){
       }
     });
   }, sendInterval);
+*/
 };
 

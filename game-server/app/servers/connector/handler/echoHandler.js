@@ -15,6 +15,7 @@ var Handler = function(app) {
 
 Handler.prototype.echo = function(msg, session, next) {
   console.error('session.id = ', session.id);
+  /*
   var self = this;
   var idx = uuid.v1();
   if(curNum >= maxNum) {
@@ -28,5 +29,6 @@ Handler.prototype.echo = function(msg, session, next) {
       }
       next(null, {c: ret});
     });
- };
+  */
+};
 
